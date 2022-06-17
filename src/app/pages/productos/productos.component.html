@@ -1,1 +1,40 @@
-<p>productos works!</p>
+<p>productos </p>
+<div class="container">
+    
+  
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">Nombre</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="fname" name="nombre"  [(ngModel)]="name">
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-25">
+          <label for="lname">Precio</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="lname" name="Precio"  [(ngModel)]="price">
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-25">
+          <label for="age">Categoria</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="age" name="categoria"  [(ngModel)]="category">
+        </div>
+      </div>
+              
+  
+     
+      <div class="row">
+        <input type="button" value="Submit" (click)="doguardar()">
+      </div>
+  
+    
+  </div>
+

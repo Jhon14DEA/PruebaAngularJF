@@ -10,6 +10,10 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { ProductosComponent } from './pages/productos/productos.component';
 import { ListadoComponent } from './pages/listado/listado.component';
+import { AngularFireModule, FIREBASE_OPTIONS} from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { FormsModule } from '@angular/forms';
+;
 
 @NgModule({
   declarations: [
@@ -20,12 +24,18 @@ import { ListadoComponent } from './pages/listado/listado.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore()),
-    provideStorage(() => getStorage())
+    FormsModule,
+    AppRoutingModule,
+    // provideFirebaseApp(() => initializeApp(environment.firebase)),    
+    // provideAuth(() => getAuth()),
+    // provideFirestore(() => getFirestore()),
+    // provideStorage(() => getStorage())
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule, 
   ],
-  providers: [],
+  providers: [
+    {provide: FIREBASE_OPTIONS, useValue: environment.firebaseConfig  }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,1 +1,16 @@
-<p>listado works!</p>
+<p>listado </p>
+
+<table class="default">
+    <tr>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Categoria</th>
+    </tr>
+    <!-- <tr  *ngFor="let producto of listado | async"> -->
+    <tr *ngFor="let producto of listado | async">
+        <td>{{producto.name}}</td>
+        <td>{{producto.price}}</td>
+        <td>{{producto.category}}</td>
+    </tr>
+</table>
+<button (click)="goContactos()">Crear nuevo</button>
