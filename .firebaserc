@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "pruebaagjf": {
+      "hosting": {
+        "PruebaAngularJF": [
+          "pruebaagjf"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "pruebaagjf"
+  }
+}
